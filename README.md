@@ -1,4 +1,4 @@
-# Desafio 1 - Os Guardiões de Eldoria: A Saga Continua
+# Desafio - Os Guardiões de Eldoria: A Saga Continua
 
 Bem-vindo ao desafio "Os Guardiões de Eldoria"! Neste sistema, você criará e gerenciará personagens do reino encantado, aplicando conceitos avançados da Programação Orientada a Objetos em Java. Cada personagem possui atributos únicos e habilidades especiais que os distinguem em batalhas épicas.
 
