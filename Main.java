@@ -1,15 +1,26 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        
+        // Criando uma lista genérica de Personagens (ArrayList)
+        List<Personagem> grupoDeHerois = new ArrayList<>();
 
-        //Criando os objetos!
-        Personagem heroi1 = new Personagem("Arthemis", "Arqueira", 5, 80, 12.5);
-        Personagem heroi2 = new Personagem("Thalric", "Mago", 7, 60, 18.2);
+        // Adicionando instâncias das subclasses à lista
+        grupoDeHerois.add(new Guerreiro("Arthus", 10, 150, 25.0));
+        grupoDeHerois.add(new Mago("Elenara", 12, 90, 35.5));
+        grupoDeHerois.add(new Guerreiro("Maximus", 8, 120, 20.0));
 
-        //Exibindo o Personagens 1.
-        heroi1.exibirStatus();              
+        System.out.println("--- INÍCIO DA JORNADA ---" + "\n");
 
-        //Exibindo o Personagem 2.
-        heroi2.exibirStatus();
+        // Iterando sobre a lista (Polimorfismo em ação)
+        for (Personagem heroi : grupoDeHerois) {
+            heroi.exibirStatus(); // Chama o método comum
+            heroi.usarHabilidadeEspecial(); // Chama o comportamento específico de cada um
+            System.out.println(); // Linha em branco para organização visual
+        }
 
+        System.out.println("--- FIM DA AVENTURA ---");
     }
 }
