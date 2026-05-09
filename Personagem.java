@@ -1,29 +1,29 @@
 /**
-* Classe Personagem com o uso de Construtor para otimização da Instância.
-*/
-public class Personagem {
-    String nome;
-    String classe;
-    int nivel;
-    int pontosDeVida;
-    double poderBase;
-    
-//Construtor: Inicializa o objeto com valores no momento do 'new'
+ * Classe abstrata que serve de molde para todos os heróis.
+ * O modificador 'abstract' impede que esta classe seja instanciada diretamente.
+ */
+public abstract class Personagem {
+    protected String nome;
+    protected String classe;
+    protected int nivel;
+    protected int pontosDeVida;
+    protected double poderBase;
+
+    // Construtor que será chamado pelas subclasses via super()
     public Personagem(String nome, String classe, int nivel, int pontosDeVida, double poderBase) {
         this.nome = nome;
         this.classe = classe;
         this.nivel = nivel;
         this.pontosDeVida = pontosDeVida;
-        this.poderBase = poderBase;       
+        this.poderBase = poderBase;
     }
 
+    // Método comum a todos: reaproveitamento de código
     public void exibirStatus() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Classe: " + classe);
-        System.out.println("Nível: " + nivel);
-        System.out.println("Pontos de Vida: " + pontosDeVida);
-        System.out.println("Poder Base: " + poderBase);
-        System.out.println("-------------------------");
+        System.out.println("Nome: " + nome + " | Classe: " + classe + 
+                           " | Nível: " + nivel + " | PV: " + pontosDeVida);
     }
-}
 
+    // Método abstrato: cada subclasse é OBRIGADA a implementar sua própria versão
+    public abstract void usarHabilidadeEspecial();
+}
