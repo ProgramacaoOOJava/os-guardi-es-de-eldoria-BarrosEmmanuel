@@ -1,9 +1,6 @@
-//Criei a Subclasse Guerreiro.
 public class Guerreiro extends Personagem {
-    
-    public Guerreiro(String nome, int nivel, int pontosDeVida, double poderBase) {
-        // Chama o construtor da superclasse Personagem
-        super(nome, "Guerreiro", nivel, pontosDeVida, poderBase);
+    public Guerreiro(String nome, String classe, int nivel, int pontosDeVida, double poderBase) {
+        super(nome, classe, nivel, pontosDeVida, poderBase);
     }
 
     @Override
