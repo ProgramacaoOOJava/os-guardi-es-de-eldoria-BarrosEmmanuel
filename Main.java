@@ -2,7 +2,6 @@ public class Main {
     public static void main(String[] args) {
         // Criando o Grupo 1
         Grupo alianca = new Grupo();
-        // Agora com 5 parâmetros: Nome, Classe, Nível, Vida, Poder
         alianca.adicionarPersonagem(new Guerreiro("Arthus", "Guerreiro", 10, 150, 25.0));
         alianca.adicionarPersonagem(new Mago("Elenara", "Mago", 12, 90, 35.5));
 
@@ -11,8 +10,15 @@ public class Main {
         horda.adicionarPersonagem(new Guerreiro("Maximus", "Guerreiro", 9, 120, 22.0));
         horda.adicionarPersonagem(new Mago("Thalric", "Mago", 11, 100, 30.0));
 
-        // Arena
+        // Arena e Batalhas
         Arena arena = new Arena();
         arena.batalharGrupos(alianca, horda);
+
+        // --- MENSAGEM DE ENCERRAMENTO ---
+        System.out.println("\n********************");
+        System.out.println("*     Fim do Jogo!     *");
+        System.out.println("********************");
+        System.out.println("Aluno: Emmanuel Américo Barros");
+        System.out.println("Curso: Sistemas de Informação");
     }
 }
