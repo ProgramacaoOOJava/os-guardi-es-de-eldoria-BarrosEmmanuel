@@ -1,17 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        // Criando Grupo 1
-        Grupo grupoLuz = new Grupo();
-        grupoLuz.adicionarPersonagem(new Guerreiro("Arthus", 10, 25.0));
-        grupoLuz.adicionarPersonagem(new Mago("Elenara", 12, 35.5));
+        // Criando o Grupo 1
+        Grupo alianca = new Grupo();
+        // Agora com 5 parâmetros: Nome, Classe, Nível, Vida, Poder
+        alianca.adicionarPersonagem(new Guerreiro("Arthus", "Guerreiro", 10, 150, 25.0));
+        alianca.adicionarPersonagem(new Mago("Elenara", "Mago", 12, 90, 35.5));
 
-        // Criando Grupo 2
-        Grupo grupoTrevas = new Grupo();
-        grupoTrevas.adicionarPersonagem(new Guerreiro("Maximus", 9, 22.0));
-        grupoTrevas.adicionarPersonagem(new Mago("Thalric", 11, 30.0));
+        // Criando o Grupo 2
+        Grupo horda = new Grupo();
+        horda.adicionarPersonagem(new Guerreiro("Maximus", "Guerreiro", 9, 120, 22.0));
+        horda.adicionarPersonagem(new Mago("Thalric", "Mago", 11, 100, 30.0));
 
-        // Criando a Arena e executando a batalha
+        // Arena
         Arena arena = new Arena();
-        arena.batalharGrupos(grupoLuz, grupoTrevas);
+        arena.batalharGrupos(alianca, horda);
     }
 }
