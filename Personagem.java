@@ -1,6 +1,6 @@
 /**
- * Classe abstrata que serve de molde para todos os heróis.
- * O modificador 'abstract' impede que esta classe seja instanciada diretamente.
+ * Classe Personagem atualizada.
+ * Os métodos 'get' permitem que a classe Grupo acesse os dados para a batalha.
  */
 public abstract class Personagem {
     protected String nome;
@@ -9,7 +9,6 @@ public abstract class Personagem {
     protected int pontosDeVida;
     protected double poderBase;
 
-    // Construtor que será chamado pelas subclasses via super()
     public Personagem(String nome, String classe, int nivel, int pontosDeVida, double poderBase) {
         this.nome = nome;
         this.classe = classe;
@@ -18,12 +17,26 @@ public abstract class Personagem {
         this.poderBase = poderBase;
     }
 
-    // Método comum a todos: reaproveitamento de código
+    // --- MÉTODOS GETTERS (RESOLVEM O SEU ERRO) ---
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public double getPoderBase() {
+        return poderBase;
+    }
+
+    // --- FIM DOS GETTERS ---
+
     public void exibirStatus() {
         System.out.println("Nome: " + nome + " | Classe: " + classe + 
                            " | Nível: " + nivel + " | PV: " + pontosDeVida);
     }
 
-    // Método abstrato: cada subclasse é OBRIGADA a implementar sua própria versão
     public abstract void usarHabilidadeEspecial();
 }
