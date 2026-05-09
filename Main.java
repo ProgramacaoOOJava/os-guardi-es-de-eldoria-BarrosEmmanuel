@@ -15,9 +15,9 @@ public class Main {
         arena.batalharGrupos(alianca, horda);
 
         // --- MENSAGEM DE ENCERRAMENTO ---
-        System.out.println("\n********************");
+        System.out.println("\n************************");
         System.out.println("*     Fim do Jogo!     *");
-        System.out.println("********************");
+        System.out.println("************************");
         System.out.println("Aluno: Emmanuel Américo Barros");
         System.out.println("Curso: Sistemas de Informação");
     }
