@@ -1,7 +1,3 @@
-/**
- * Classe Personagem atualizada.
- * Os métodos 'get' permitem que a classe Grupo acesse os dados para a batalha.
- */
 public abstract class Personagem {
     protected String nome;
     protected String classe;
@@ -17,26 +13,37 @@ public abstract class Personagem {
         this.poderBase = poderBase;
     }
 
-    // --- MÉTODOS GETTERS (RESOLVEM O SEU ERRO) ---
-    
-    public String getNome() {
-        return nome;
+    public String getNome() { return nome; }
+    public int getNivel() { return nivel; }
+    public double getPoderBase() { return poderBase; }
+
+    // Método que gera a frase descritiva pedida no exemplo
+    @Override
+    public String toString() {
+        return "O personagem " + nome + " é um " + classe + " de nível " + nivel + ".";
     }
 
-    public int getNivel() {
-        return nivel;
+    // Implementação de consistência para comparação (Requisito do projeto)
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Personagem outo = (Personagem) obj;
+        return nome.equals(outo.nome) && classe.equals(outo.classe);
     }
 
-    public double getPoderBase() {
-        return poderBase;
-    }
-
-    // --- FIM DOS GETTERS ---
-
-    public void exibirStatus() {
-        System.out.println("Nome: " + nome + " | Classe: " + classe + 
-                           " | Nível: " + nivel + " | PV: " + pontosDeVida);
+    @Override
+    public int hashCode() {
+        return nome.hashCode() + classe.hashCode();
     }
 
     public abstract void usarHabilidadeEspecial();
+    
+    public void exibirStatus() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Classe: " + classe);
+        System.out.println("Nível: " + nivel);
+        System.out.println("Pontos de Vida: " + pontosDeVida);
+        System.out.println("Poder Base: " + poderBase);
+    }
 }
