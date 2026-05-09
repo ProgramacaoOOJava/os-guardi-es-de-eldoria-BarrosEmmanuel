@@ -1,23 +1,29 @@
 public class Main {
     public static void main(String[] args) {
-        // Criando o Grupo 1
-        Grupo alianca = new Grupo();
-        alianca.adicionarPersonagem(new Guerreiro("Arthus", "Guerreiro", 10, 150, 25.0));
-        alianca.adicionarPersonagem(new Mago("Elenara", "Mago", 12, 90, 35.5));
+        System.out.println("=== BEM-VINDOS AO REINO DE ELDORIA ===");
 
-        // Criando o Grupo 2
-        Grupo horda = new Grupo();
-        horda.adicionarPersonagem(new Guerreiro("Maximus", "Guerreiro", 9, 120, 22.0));
-        horda.adicionarPersonagem(new Mago("Thalric", "Mago", 11, 100, 30.0));
+        // Criando os personagens para o exemplo de saída
+        Personagem heroi1 = new Mago("Eldoran", "Mago", 7, 60, 18.0);
+        Personagem heroi2 = new Guerreiro("Arthemis", "Guerreiro", 5, 80, 12.5);
 
-        // Arena e Batalhas
-        Arena arena = new Arena();
-        arena.batalharGrupos(alianca, horda);
+        // --- Exibindo Herói 1 ---
+        System.out.println("\n--- Herói 1 ---");
+        heroi1.exibirStatus();
+        heroi1.usarHabilidadeEspecial();
+        System.out.println(heroi1.toString());
 
-        // --- MENSAGEM DE ENCERRAMENTO ---
-        System.out.println("\n************************");
+        // --- Exemplo de Comparação (equals) ---
+        System.out.print("\nComparação: " + heroi1.getNome() + " e " + heroi2.getNome());
+        if (heroi1.equals(heroi2)) {
+            System.out.println(" são iguais.");
+        } else {
+            System.out.println(" são diferentes.");
+        }
+
+        // Mensagem de Encerramento mantida
+        System.out.println("\n********************");
         System.out.println("*     Fim do Jogo!     *");
-        System.out.println("************************");
+        System.out.println("********************");
         System.out.println("Aluno: Emmanuel Américo Barros");
         System.out.println("Curso: Sistemas de Informação");
     }
